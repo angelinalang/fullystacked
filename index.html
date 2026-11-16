@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GLDining | Blu & Library — Norman, OK</title>
+  <meta name="description" content="Two neighborhood restaurants in Norman, Oklahoma: Blu and Library.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&amp;family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Pick light or dark before the page draws (saved choice, otherwise dark after 6 pm) -->
+  <script>
+    (function () {
+      var mode = null;
+      try { mode = localStorage.getItem("gl-mode"); } catch (e) {}
+      if (!mode) { var h = new Date().getHours(); mode = (h >= 18 || h < 6) ? "dark" : "light"; }
+      document.documentElement.setAttribute("data-mode", mode);
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===== NAVIGATION (same on every page) ===== -->
+  <header class="site-header">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="index.html">
+        <span class="brand-mono">GL</span>
+        <span class="brand-name">GLDining</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="blu.html">Blu</a></li>
+        <li><a href="library.html">Library</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a class="btn btn--sm btn--dark" href="menu.html">View menus</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" type="button" aria-label="Switch to dark mode"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" data-slideshow>
+    <div class="slides">
+      <img class="slide is-active" src="images/home-hero.jpg" alt="Friends sharing pizza and wine at a long table">
+      <img class="slide" src="images/blu-hero.jpg" alt="Guests on Blu's lantern-lit patio" loading="lazy">
+      <img class="slide" src="images/library-hero.jpg" alt="Diners in Library's book-lined room" loading="lazy">
+    </div>
+    <div class="hero-scrim"></div>
+    <div class="slide-dots">
+      <button class="slide-dot is-active" aria-label="Show photo 1"></button>
+      <button class="slide-dot" aria-label="Show photo 2"></button>
+      <button class="slide-dot" aria-label="Show photo 3"></button>
+    </div>
+      <div class="hero-content">
+        <p class="eyebrow">Two neighborhood restaurants · One warm welcome</p>
+        <h1 class="hero-title">Cozy food. Community space.</h1>
+        <p class="hero-text">Everyday gathering places for wood-fired food, thoughtful drinks, and the people who make a neighborhood feel like home.</p>
+        <div class="hero-actions">
+          <a class="btn btn--light" href="menu.html#blu">Blu menu</a>
+          <a class="btn btn--light" href="menu.html#library">Library menu</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHOOSE YOUR TABLE -->
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Choose your table</p>
+        <h2>Two places, each with its own rhythm.</h2>
+        <p>Same neighborhood spirit, distinct menus and rooms. Find the one that fits tonight.</p>
+      </div>
+      <div class="restaurant-grid">
+        <article class="restaurant-card">
+          <img src="images/blu-card.jpg" alt="Blu's patio at dusk with string lights" loading="lazy">
+          <div class="restaurant-card-body">
+            <div class="restaurant-id"><h3 style="color:var(--blu)">Blu</h3><span>01</span></div>
+            <p>Wood-fired pizza, generous salads, and easygoing patio nights in a leafy corner of the neighborhood.</p>
+            <div class="card-actions">
+              <a class="btn btn--blu" href="blu.html">Visit Blu</a>
+              <a class="btn" href="menu.html#blu">View menu</a>
+            </div>
+          </div>
+        </article>
+        <article class="restaurant-card">
+          <img src="images/library-card.jpg" alt="Couples dining between floor-to-ceiling bookshelves" loading="lazy">
+          <div class="restaurant-card-body">
+            <div class="restaurant-id"><h3 style="color:var(--lib)">Library</h3><span>02</span></div>
+            <p>Comforting plates, well-poured pints, and the kind of room that invites you to stay awhile.</p>
+            <div class="card-actions">
+              <a class="btn btn--lib" href="library.html">Visit Library</a>
+              <a class="btn" href="menu.html#library">View menu</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SPECIAL -->
+    <section class="split">
+      <img src="images/special-pizza.jpg" alt="Margherita pizza on a wooden board with drinks" loading="lazy">
+      <div class="split-body">
+        <p class="eyebrow" style="color:var(--accent)">The neighborhood favorite</p>
+        <h2>Half-off pizza with a drink.</h2>
+        <p>Sundays all day and daily from 3–6 pm. Dine-in at Blu and Library.</p>
+        <a class="btn btn--dark" href="menu.html">See both menus</a>
+      </div>
+    </section>
+
+    <!-- FIND US -->
+    <section class="find-us">
+      <div class="section-heading">
+        <p class="eyebrow">Find us</p>
+        <h2>Your neighborhood table is close by.</h2>
+        <p>Both restaurants are minutes apart, with their own character and the same easy welcome.</p>
+      </div>
+      <div class="map">
+        <img src="images/neighborhood-map.jpg" alt="Illustrated neighborhood map" loading="lazy">
+        <a class="map-pin map-pin--blu" href="https://maps.google.com/?q=201+S+Crawford+Ave+Norman+OK" target="_blank" rel="noopener">Blu</a>
+        <a class="map-pin map-pin--lib" href="https://maps.google.com/?q=607+W+Boyd+St+Norman+OK" target="_blank" rel="noopener">Library</a>
+      </div>
+      <div class="location-cards">
+        <div class="location-card">
+          <h3 style="color:var(--blu)">Blu</h3>
+          <a href="https://maps.google.com/?q=201+S+Crawford+Ave+Norman+OK" target="_blank" rel="noopener">201 S Crawford Ave</a>
+          <a class="muted" href="tel:8505550124">(850) 555–0124</a>
+          <a class="text-link" style="color:var(--blu)" href="https://maps.google.com/?q=201+S+Crawford+Ave+Norman+OK" target="_blank" rel="noopener">Get directions →</a>
+        </div>
+        <div class="location-card">
+          <h3 style="color:var(--lib)">Library</h3>
+          <a href="https://maps.google.com/?q=607+W+Boyd+St+Norman+OK" target="_blank" rel="noopener">607 W Boyd St</a>
+          <a class="muted" href="tel:8505550187">(850) 555–0187</a>
+          <a class="text-link" style="color:var(--lib)" href="https://maps.google.com/?q=607+W+Boyd+St+Norman+OK" target="_blank" rel="noopener">Get directions →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER (same on every page) ===== -->
+  <footer class="site-footer">
+    <div class="footer-head">
+      <div>
+        <p class="eyebrow">Come as you are</p>
+        <h2>Good food tastes better together.</h2>
+      </div>
+      <a class="btn btn--light" href="contact.html">Get in touch <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></a>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-cols">
+      <div>
+        <p class="eyebrow">Contact us</p>
+        <a href="tel:8505550148">(850) 555–0148</a>
+        <a href="mailto:hello@gldining.com">hello@gldining.com</a>
+      </div>
+      <div>
+        <p class="eyebrow">Follow us</p>
+        <div class="socials">
+          <a class="social" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a>
+          <a class="social" href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a class="social" href="mailto:hello@gldining.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <p class="eyebrow">More</p>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html#policies">House policies</a>
+      </div>
+    </div>
+    <p class="footer-note">No pets, service animals welcome · Catering orders by phone · Must be 21+ to order alcohol · © <span id="year">2026</span> GLDining</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+</body>
+</html>

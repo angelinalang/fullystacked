@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GLDining | Blu & Library — Norman, OK</title>
-  <meta name="description" content="Two neighborhood restaurants in Norman, Oklahoma: Blu and Library.">
+  <title>The Library | Bar & Kitchen in Norman, OK</title>
+  <meta name="description" content="An English-style pub on Boyd Street in Norman, Oklahoma. Comfort food, 35 beers on tap, and one of Norman’s best patios, across the street from OU.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&amp;family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&amp;family=Nunito+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
-  <!-- Pick light or dark before the page draws (saved choice, otherwise dark after 6 pm) -->
+  <!-- Light or "lamps low" before the page draws: saved choice, otherwise dark after 6 pm -->
   <script>
     (function () {
       var mode = null;
@@ -22,157 +22,229 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ===== NAVIGATION (same on every page) ===== -->
+  <!-- ===== HEADER (same on every page) ===== -->
   <header class="site-header">
-    <nav class="nav" aria-label="Main">
+    <nav class="wrap nav" aria-label="Main">
       <a class="brand" href="index.html">
-        <span class="brand-mono">GL</span>
-        <span class="brand-name">GLDining</span>
+        <span class="brand-plate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg></span>
+        <span class="brand-text"><span class="brand-name">The Library</span><span class="brand-sub">Bar &amp; Grill · Norman, OK</span></span>
       </a>
       <ul class="nav-links" id="nav-links">
-        <li><a href="index.html" aria-current="page">Home</a></li>
-        <li><a href="blu.html">Blu</a></li>
-        <li><a href="library.html">Library</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="careers.html">Careers</a></li>
-        <li><a class="btn btn--sm btn--dark" href="menu.html">View menus</a></li>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="contact.html">Visit</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a class="btn btn--sm" href="tel:4053667465"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg> Call to save a seat</a></li>
       </ul>
       <div class="nav-actions">
-        <button class="theme-toggle" type="button" aria-label="Switch to dark mode"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
-        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <button class="icon-btn lamp" type="button" aria-label="Dim the lamps (dark mode)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8"/><path d="M12 21v-7"/><path d="M4.5 12h15L16 4H8z"/><g class="glow"><path d="M7 15.5 5.5 17.5M17 15.5l1.5 2M9.5 16l-.5 2.2M14.5 16l.5 2.2"/></g></svg></button>
+        <button class="icon-btn nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
       </div>
     </nav>
   </header>
 
   <main id="main">
-    <!-- HERO -->
+    <!-- HERO: full photo slideshow with a shelf of books along the bottom -->
     <section class="hero" data-slideshow>
     <div class="slides">
-      <img class="slide is-active" src="images/home-hero.jpg" alt="Friends sharing pizza and wine at a long table">
-      <img class="slide" src="images/blu-hero.jpg" alt="Guests on Blu's lantern-lit patio" loading="lazy">
-      <img class="slide" src="images/library-hero.jpg" alt="Diners in Library's book-lined room" loading="lazy">
+      <img class="slide is-active" src="images/patio.jpg" alt="The Library's sign and shady brick patio on Boyd Street">
+      <img class="slide" src="images/bar-taps.jpg" alt="A long row of draft beer taps behind the bar" loading="lazy">
+      <img class="slide" src="images/pizza-sliders.jpg" alt="A BBQ chicken pizza and pot roast sliders" loading="lazy">
     </div>
     <div class="hero-scrim"></div>
-    <div class="slide-dots">
-      <button class="slide-dot is-active" aria-label="Show photo 1"></button>
-      <button class="slide-dot" aria-label="Show photo 2"></button>
-      <button class="slide-dot" aria-label="Show photo 3"></button>
-    </div>
-      <div class="hero-content">
-        <p class="eyebrow">Two neighborhood restaurants · One warm welcome</p>
-        <h1 class="hero-title">Cozy food. Community space.</h1>
-        <p class="hero-text">Everyday gathering places for wood-fired food, thoughtful drinks, and the people who make a neighborhood feel like home.</p>
-        <div class="hero-actions">
-          <a class="btn btn--light" href="menu.html#blu">Blu menu</a>
-          <a class="btn btn--light" href="menu.html#library">Library menu</a>
+    <div class="slide-dots"><button class="slide-dot is-active" aria-label="Show photo 1"></button><button class="slide-dot" aria-label="Show photo 2"></button><button class="slide-dot" aria-label="Show photo 3"></button></div>
+      <div class="stamp" role="status">Open<br>daily</div>
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <p class="hero-kicker">607 W Boyd St · Across from OU · Norman, Oklahoma</p>
+          <h1>Pull up a chair. <em>Stay for a chapter.</em></h1>
+          <p class="hero-lead">A neighborhood bar tucked behind the greenery in an old house across from OU, with pub grub, one of Norman’s biggest draft lists, and a patio worth lingering on.</p>
+          <div class="hero-actions">
+            <a class="btn btn--brass" href="menu.html">Open the menu <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+            <a class="btn btn--light" href="tel:4053667465"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg> Call to save a seat</a>
+          </div>
+          <p class="hero-note">No reservations. Call ahead and we’ll do our best.</p>
+        </div>
+      </div>
+
+  <div class="shelf" aria-hidden="true"><span class="spine band" style="--w:18px;--h:94%;--c:#7a2526"></span><span class="spine" style="--w:28px;--h:88%;--c:#b59a6a"></span><span class="spine" style="--w:14px;--h:82%;--c:#b59a6a"></span><span class="spine" style="--w:28px;--h:75%;--c:#c9a24a"></span><span class="spine band" style="--w:24px;--h:59%;--c:#2f4a3b"></span><span class="spine" style="--w:26px;--h:71%;--c:#b59a6a"></span><span class="spine band" style="--w:28px;--h:89%;--c:#1f3328"></span><span class="spine" style="--w:21px;--h:87%;--c:#5f6b3a"></span><span class="spine band" style="--w:17px;--h:69%;--c:#5f6b3a"></span><span class="spine" style="--w:30px;--h:85%;--c:#1f3328"></span><span class="spine" style="--w:23px;--h:76%;--c:#9a6a3a"></span><span class="spine" style="--w:30px;--h:83%;--c:#9a6a3a"></span><span class="spine band" style="--w:26px;--h:84%;--c:#6b4428"></span><span class="spine" style="--w:25px;--h:63%;--c:#8a2a2b"></span><span class="spine band" style="--w:19px;--h:91%;--c:#b59a6a"></span><span class="spine" style="--w:29px;--h:60%;--c:#5f6b3a"></span><span class="spine" style="--w:26px;--h:68%;--c:#6b4428"></span><span class="spine band" style="--w:20px;--h:92%;--c:#1f3328"></span><span class="spine" style="--w:25px;--h:87%;--c:#5f6b3a"></span><span class="spine" style="--w:14px;--h:82%;--c:#1f3328"></span><span class="spine" style="--w:20px;--h:85%;--c:#2f4a3b"></span><span class="spine" style="--w:20px;--h:90%;--c:#b59a6a"></span><span class="spine" style="--w:25px;--h:58%;--c:#1f3328"></span><span class="spine band" style="--w:24px;--h:87%;--c:#9a6a3a"></span><span class="spine band" style="--w:19px;--h:93%;--c:#9a6a3a"></span><span class="spine band lean" style="--w:22px;--h:60%;--c:#7a2526"></span><span class="spine band" style="--w:14px;--h:75%;--c:#c9a24a"></span><span class="spine band" style="--w:19px;--h:80%;--c:#5f6b3a"></span><span class="spine" style="--w:30px;--h:68%;--c:#5f6b3a"></span><span class="spine band" style="--w:24px;--h:89%;--c:#8a2a2b"></span><span class="spine band" style="--w:24px;--h:84%;--c:#c9a24a"></span><span class="spine band" style="--w:30px;--h:71%;--c:#9a6a3a"></span><span class="spine band" style="--w:21px;--h:59%;--c:#b59a6a"></span><span class="spine" style="--w:19px;--h:86%;--c:#1f3328"></span><span class="spine band" style="--w:21px;--h:91%;--c:#8a2a2b"></span><span class="spine" style="--w:26px;--h:94%;--c:#2c3e50"></span><span class="spine" style="--w:23px;--h:66%;--c:#c9a24a"></span><span class="spine" style="--w:16px;--h:77%;--c:#5f6b3a"></span><span class="spine" style="--w:22px;--h:66%;--c:#2f4a3b"></span><span class="spine band" style="--w:20px;--h:94%;--c:#8a2a2b"></span><span class="spine band" style="--w:30px;--h:60%;--c:#b59a6a"></span><span class="spine" style="--w:27px;--h:95%;--c:#c9a24a"></span><span class="spine" style="--w:26px;--h:76%;--c:#1f3328"></span><span class="spine band" style="--w:26px;--h:76%;--c:#2f4a3b"></span><span class="spine band" style="--w:18px;--h:79%;--c:#b59a6a"></span><span class="spine" style="--w:26px;--h:93%;--c:#2c3e50"></span><span class="spine band" style="--w:29px;--h:92%;--c:#c9a24a"></span><span class="spine" style="--w:18px;--h:68%;--c:#6b4428"></span><span class="spine" style="--w:24px;--h:96%;--c:#1f3328"></span><span class="spine band" style="--w:24px;--h:65%;--c:#5f6b3a"></span><span class="spine" style="--w:29px;--h:66%;--c:#9a6a3a"></span><span class="spine band" style="--w:15px;--h:84%;--c:#7a2526"></span><span class="spine band" style="--w:18px;--h:66%;--c:#2c3e50"></span><span class="spine" style="--w:26px;--h:62%;--c:#9a6a3a"></span><span class="spine" style="--w:22px;--h:81%;--c:#5f6b3a"></span><span class="spine" style="--w:28px;--h:75%;--c:#7a2526"></span><span class="spine band" style="--w:14px;--h:58%;--c:#7a2526"></span><span class="spine" style="--w:15px;--h:70%;--c:#c9a24a"></span><span class="spine band" style="--w:19px;--h:65%;--c:#8a2a2b"></span><span class="spine" style="--w:17px;--h:85%;--c:#b59a6a"></span><span class="spine" style="--w:23px;--h:93%;--c:#5f6b3a"></span><span class="spine band" style="--w:20px;--h:78%;--c:#2f4a3b"></span><span class="spine band" style="--w:23px;--h:96%;--c:#2c3e50"></span><span class="spine" style="--w:16px;--h:62%;--c:#2c3e50"></span><span class="spine" style="--w:17px;--h:74%;--c:#c9a24a"></span><span class="spine band" style="--w:29px;--h:80%;--c:#5f6b3a"></span><span class="spine band" style="--w:20px;--h:73%;--c:#2c3e50"></span><span class="spine" style="--w:28px;--h:63%;--c:#9a6a3a"></span><span class="spine band" style="--w:26px;--h:77%;--c:#2f4a3b"></span><span class="spine band" style="--w:23px;--h:73%;--c:#2c3e50"></span><span class="spine band" style="--w:16px;--h:73%;--c:#c9a24a"></span><span class="spine" style="--w:16px;--h:75%;--c:#1f3328"></span><span class="spine" style="--w:14px;--h:58%;--c:#5f6b3a"></span><span class="spine" style="--w:29px;--h:67%;--c:#7a2526"></span><span class="spine band" style="--w:16px;--h:90%;--c:#6b4428"></span><span class="spine band" style="--w:18px;--h:78%;--c:#5f6b3a"></span><span class="spine band" style="--w:23px;--h:66%;--c:#c9a24a"></span><span class="spine" style="--w:15px;--h:78%;--c:#9a6a3a"></span><span class="spine band" style="--w:20px;--h:69%;--c:#5f6b3a"></span><span class="spine" style="--w:21px;--h:74%;--c:#7a2526"></span><span class="spine" style="--w:27px;--h:93%;--c:#5f6b3a"></span><span class="spine" style="--w:28px;--h:58%;--c:#b59a6a"></span><span class="spine lean" style="--w:29px;--h:59%;--c:#b59a6a"></span><span class="spine" style="--w:25px;--h:95%;--c:#6b4428"></span><span class="spine band" style="--w:22px;--h:83%;--c:#9a6a3a"></span><span class="spine band" style="--w:21px;--h:89%;--c:#2f4a3b"></span><span class="spine band" style="--w:28px;--h:72%;--c:#c9a24a"></span><span class="spine" style="--w:21px;--h:84%;--c:#2c3e50"></span><span class="spine" style="--w:22px;--h:72%;--c:#2f4a3b"></span><span class="spine" style="--w:25px;--h:68%;--c:#1f3328"></span><span class="spine" style="--w:23px;--h:77%;--c:#5f6b3a"></span><span class="spine" style="--w:28px;--h:96%;--c:#7a2526"></span><span class="spine band" style="--w:30px;--h:94%;--c:#b59a6a"></span><span class="spine" style="--w:20px;--h:94%;--c:#2f4a3b"></span><span class="spine" style="--w:25px;--h:82%;--c:#1f3328"></span><span class="spine" style="--w:15px;--h:91%;--c:#7a2526"></span><span class="spine" style="--w:22px;--h:63%;--c:#6b4428"></span><span class="spine" style="--w:16px;--h:86%;--c:#c9a24a"></span><span class="spine" style="--w:27px;--h:83%;--c:#6b4428"></span><span class="spine band" style="--w:29px;--h:71%;--c:#7a2526"></span><span class="spine band" style="--w:17px;--h:76%;--c:#5f6b3a"></span><span class="spine band lean" style="--w:14px;--h:70%;--c:#1f3328"></span><span class="spine band" style="--w:21px;--h:74%;--c:#c9a24a"></span><span class="spine" style="--w:20px;--h:75%;--c:#5f6b3a"></span><span class="spine band" style="--w:28px;--h:68%;--c:#1f3328"></span><span class="spine" style="--w:17px;--h:71%;--c:#9a6a3a"></span><span class="spine lean" style="--w:17px;--h:59%;--c:#7a2526"></span><span class="spine" style="--w:23px;--h:66%;--c:#7a2526"></span><span class="spine" style="--w:23px;--h:85%;--c:#1f3328"></span><span class="spine band" style="--w:24px;--h:58%;--c:#7a2526"></span></div>
+
+    </section>
+
+    <!-- CHAPTER I: STORY -->
+    <section class="band">
+      <div class="wrap story">
+        <div class="story-text">
+          
+          <h2 style="font-size:clamp(34px,4.4vw,50px)">A third place, found by happy accident.</h2>
+          <p class="dropcap">Our owner had a history degree from OU, a head full of travels across Europe, and no plans to run a pub. He came into the business almost by accident, and what he found wasn’t just a restaurant. It was a clubhouse.</p>
+          <p>Some regulars come in five or six days a week. They know the bartenders by name, they have a usual, and they’ll happily tell you what to order. We like to think the room has that effect on people.</p>
+          <p>Tucked behind the greenery in an old house on the corner of Boyd and Chautauqua, The Library has been named one of America’s 10 Best College Town Bars by <em>Esquire</em>. So come as you are. You don’t have to cook tonight; that’s our job.</p>
+          <p class="signature">— The Library family, part of GL Dining</p>
+        </div>
+        <div class="frame frame--tilt" style="aspect-ratio:4/5">
+          <img src="images/owner.jpg" alt="The Library's owner" loading="lazy">
         </div>
       </div>
     </section>
 
-    <!-- CHOOSE YOUR TABLE -->
-    <section class="section">
-      <div class="section-heading">
-        <p class="eyebrow">Choose your table</p>
-        <h2>Two places, each with its own rhythm.</h2>
-        <p>Same neighborhood spirit, distinct menus and rooms. Find the one that fits tonight.</p>
-      </div>
-      <div class="restaurant-grid">
-        <article class="restaurant-card">
-          <img src="images/blu-card.jpg" alt="Blu's patio at dusk with string lights" loading="lazy">
-          <div class="restaurant-card-body">
-            <div class="restaurant-id"><h3 style="color:var(--blu)">Blu</h3><span>01</span></div>
-            <p>Wood-fired pizza, generous salads, and easygoing patio nights in a leafy corner of the neighborhood.</p>
-            <div class="card-actions">
-              <a class="btn btn--blu" href="blu.html">Visit Blu</a>
-              <a class="btn" href="menu.html#blu">View menu</a>
+    <!-- CHAPTER II: TODAY -->
+    <section class="band band--alt">
+      <div class="wrap">
+        <div class="heading">
+          
+          <h2>When to find us.</h2>
+          <p>No reservations, no fuss. Walk in, or call ahead and we’ll save you a seat if we can.</p>
+        </div>
+        <div class="today-grid">
+        <div class="due-card">
+          <div class="due-head"><h3>Hours</h3></div>
+          <div class="due-row" data-day="1"><span>Monday</span><strong>11 am – 2 am</strong></div>
+          <div class="due-row" data-day="2"><span>Tuesday</span><strong>11 am – 2 am</strong></div>
+          <div class="due-row" data-day="3"><span>Wednesday</span><strong>11 am – 2 am</strong></div>
+          <div class="due-row" data-day="4"><span>Thursday</span><strong>11 am – 2 am</strong></div>
+          <div class="due-row" data-day="5"><span>Friday</span><strong>11 am – 2 am</strong></div>
+          <div class="due-row" data-day="6"><span>Saturday</span><strong>11 am – 2 am</strong></div>
+          <div class="due-row" data-day="0"><span>Sunday</span><strong>11 am – 2 am</strong></div>
+          <p class="due-foot">Open late, seven days a week. No reservations — <a href="tel:4053667465">call ahead</a> and we’ll do our best.</p>
+        </div>
+          <div class="side-cards">
+            <div class="bookmark">
+              <h3>Happy hour</h3>
+              <p class="big">Daily · 3–6 pm</p>
+              <p>Every draft beer is $2 less than the printed price.</p>
+            </div>
+            <div class="note-card">
+              <h3>The reading rooms</h3>
+              <p>Private rooms for birthdays, book clubs and work parties. Bring your own decorations; just skip the confetti.</p>
+              <a class="link" href="tel:4053667465">Call to ask about a room</a>
             </div>
           </div>
-        </article>
-        <article class="restaurant-card">
-          <img src="images/library-card.jpg" alt="Couples dining between floor-to-ceiling bookshelves" loading="lazy">
-          <div class="restaurant-card-body">
-            <div class="restaurant-id"><h3 style="color:var(--lib)">Library</h3><span>02</span></div>
-            <p>Comforting plates, well-poured pints, and the kind of room that invites you to stay awhile.</p>
-            <div class="card-actions">
-              <a class="btn btn--lib" href="library.html">Visit Library</a>
-              <a class="btn" href="menu.html#library">View menu</a>
-            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER III: MENU COVERS -->
+    <section class="band">
+      <div class="wrap">
+        <div class="heading">
+          
+          <h2>Food &amp; drink.</h2>
+          <p>A menu our regulars won’t let us change, and a bar that pours like it’s been doing this for decades.</p>
+        </div>
+        <div class="covers">
+          <a class="cover cover--green" href="menu.html">
+            <svg class="emblem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
+            <h3>The Kitchen</h3>
+            <p>Nachos, quesadillas, soup in a sourdough bread bowl, burgers &amp; sammies, and 10-inch hand-rolled pizzas.</p>
+            <span class="link">Read the food menu</span>
+          </a>
+          <a class="cover cover--red" href="menu.html#drinks">
+            <svg class="emblem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12l-1.5 18h-9z"/><path d="M6.4 8h11.2"/></svg>
+            <h3>The Bar</h3>
+            <p>Thirty-plus drafts, plenty of them brewed in Oklahoma, plus beer flights and wine by the glass or bottle.</p>
+            <span class="link">Read the drinks menu</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER IV: SALON WALL -->
+    <section class="band salon">
+      <div class="wrap">
+        <div class="heading">
+          
+          <h2>Warm corners &amp; good company.</h2>
+          <p>A shady brick patio, a long wall of taps, and wood-beamed rooms with green booths.</p>
+        </div>
+        <div class="salon-grid">
+          <div class="frame"><img src="images/patio.jpg" alt="Guests on the brick patio under the green awning" loading="lazy"></div>
+          <div class="frame"><img src="images/pizza-sliders.jpg" alt="BBQ chicken pizza and pot roast sliders" loading="lazy"></div>
+          <div class="frame"><img src="images/bar-taps.jpg" alt="Draft taps lined up along the bar" loading="lazy"></div>
+          <div class="frame"><img src="images/dining-room.jpg" alt="The wood-beamed dining room with green booths" loading="lazy"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RULES -->
+    <section class="band band--alt">
+      <div class="wrap">
+      <div class="rules" id="rules">
+        <h2>Library Rules</h2>
+        <p>The fine print, posted by the door.</p>
+        <ol>
+          <li>Leave the pets at home. Service animals are always welcome.</li>
+          <li>Decorate the reading rooms all you like, but please, no confetti or glitter.</li>
+          <li>Outside desserts are welcome if they come from a commercial bakery.</li>
+          <li>Need a projector for a presentation? Bring your own and we’ll find you an outlet.</li>
+          <li>Catering orders are taken by phone, not online.</li>
+          <li>You must be 21 or older to order from the bar.</li>
+        </ol>
+      </div>
+      </div>
+    </section>
+
+    <!-- VISIT -->
+    <section class="band visit">
+      <div class="wrap visit-grid">
+        <div style="display:flex;flex-direction:column;gap:16px;align-items:flex-start">
+          
+          <h2>607 W Boyd St, Norman</h2>
+          <div class="visit-lines">
+            <a href="https://maps.google.com/?q=607+W+Boyd+St+Norman+OK" target="_blank" rel="noopener">607 W Boyd St, Norman, OK 73069</a>
+            <a href="tel:4053667465">(405) 366-7465</a>
           </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- SPECIAL -->
-    <section class="split">
-      <img src="images/special-pizza.jpg" alt="Margherita pizza on a wooden board with drinks" loading="lazy">
-      <div class="split-body">
-        <p class="eyebrow" style="color:var(--accent)">The neighborhood favorite</p>
-        <h2>Half-off pizza with a drink.</h2>
-        <p>Sundays all day and daily from 3–6 pm. Dine-in at Blu and Library.</p>
-        <a class="btn btn--dark" href="menu.html">See both menus</a>
-      </div>
-    </section>
-
-    <!-- FIND US -->
-    <section class="find-us">
-      <div class="section-heading">
-        <p class="eyebrow">Find us</p>
-        <h2>Your neighborhood table is close by.</h2>
-        <p>Both restaurants are minutes apart, with their own character and the same easy welcome.</p>
-      </div>
-      <div class="map">
-        <img src="images/neighborhood-map.jpg" alt="Illustrated neighborhood map" loading="lazy">
-        <a class="map-pin map-pin--blu" href="https://maps.google.com/?q=201+S+Crawford+Ave+Norman+OK" target="_blank" rel="noopener">Blu</a>
-        <a class="map-pin map-pin--lib" href="https://maps.google.com/?q=607+W+Boyd+St+Norman+OK" target="_blank" rel="noopener">Library</a>
-      </div>
-      <div class="location-cards">
-        <div class="location-card">
-          <h3 style="color:var(--blu)">Blu</h3>
-          <a href="https://maps.google.com/?q=201+S+Crawford+Ave+Norman+OK" target="_blank" rel="noopener">201 S Crawford Ave</a>
-          <a class="muted" href="tel:8505550124">(850) 555–0124</a>
-          <a class="text-link" style="color:var(--blu)" href="https://maps.google.com/?q=201+S+Crawford+Ave+Norman+OK" target="_blank" rel="noopener">Get directions →</a>
+          <p class="muted">Open every day · 11 am – 2 am · On the corner of Boyd &amp; Chautauqua</p>
+          <div class="hero-actions">
+            <a class="btn btn--brass" href="https://maps.google.com/?q=607+W+Boyd+St+Norman+OK" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg> Get directions</a>
+            <a class="btn btn--light" href="contact.html">Visit &amp; contact</a>
+          </div>
         </div>
-        <div class="location-card">
-          <h3 style="color:var(--lib)">Library</h3>
-          <a href="https://maps.google.com/?q=607+W+Boyd+St+Norman+OK" target="_blank" rel="noopener">607 W Boyd St</a>
-          <a class="muted" href="tel:8505550187">(850) 555–0187</a>
-          <a class="text-link" style="color:var(--lib)" href="https://maps.google.com/?q=607+W+Boyd+St+Norman+OK" target="_blank" rel="noopener">Get directions →</a>
-        </div>
+        <div class="porthole"><img src="images/sign.jpg" alt="The Library Bar &amp; Grill sign" loading="lazy"></div>
       </div>
     </section>
   </main>
 
   <!-- ===== FOOTER (same on every page) ===== -->
   <footer class="site-footer">
-    <div class="footer-head">
-      <div>
-        <p class="eyebrow">Come as you are</p>
-        <h2>Good food tastes better together.</h2>
+    <div class="wrap">
+      <div class="footer-top">
+        <div>
+          <h2>Join the reading list</h2>
+          <p>New dishes, seasonal pours, and the occasional good news. No spam — we’re a pub, not a publisher.</p>
+        </div>
+        <form class="signup" novalidate>
+          <label for="signup-email">Your email</label>
+          <input id="signup-email" type="email" autocomplete="email" placeholder="you@example.com" required>
+          <button class="btn btn--brass" type="submit">Sign me up</button>
+          <p class="signup-msg" role="status"></p>
+        </form>
       </div>
-      <a class="btn btn--light" href="contact.html">Get in touch <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></a>
-    </div>
-    <div class="footer-divider"></div>
-    <div class="footer-cols">
-      <div>
-        <p class="eyebrow">Contact us</p>
-        <a href="tel:8505550148">(850) 555–0148</a>
-        <a href="mailto:hello@gldining.com">hello@gldining.com</a>
-      </div>
-      <div>
-        <p class="eyebrow">Follow us</p>
-        <div class="socials">
-          <a class="social" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a>
-          <a class="social" href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-          <a class="social" href="mailto:hello@gldining.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></a>
+      <div class="footer-cols">
+        <div>
+          <h3>Visit</h3>
+          <a href="https://maps.google.com/?q=607+W+Boyd+St+Norman+OK" target="_blank" rel="noopener">607 W Boyd St, Norman, OK 73069</a>
+          <a href="tel:4053667465">(405) 366-7465</a>
+        </div>
+        <div>
+          <h3>Follow along</h3>
+          <div class="socials">
+            <a class="social" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a>
+            <a class="social" href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <h3>More</h3>
+          <a href="menu.html">Menu</a>
+          <a href="careers.html">Careers</a>
+          <a href="contact.html#rules">Library rules</a>
         </div>
       </div>
-      <div>
-        <p class="eyebrow">More</p>
-        <a href="careers.html">Careers</a>
-        <a href="contact.html#policies">House policies</a>
+      <div class="footer-bottom">
+        <span>The Library · A GL Dining house · © <span id="year">2026</span></span>
+        <span>Must be 21+ to order from the bar · Please return by closing time.</span>
       </div>
     </div>
-    <p class="footer-note">No pets, service animals welcome · Catering orders by phone · Must be 21+ to order alcohol · © <span id="year">2026</span> GLDining</p>
   </footer>
 
   <script src="js/main.js"></script>

@@ -1,104 +1,83 @@
 // =========================================================
-// Menu page — draws the menu from menu-data.js
-// Restaurant switcher (Blu / Library) + tabs (Food / Bar)
+// Menu page — draws the card catalog from menu-data.js
+// Drawers switch between Food and Drinks.
+//   Food   → index cards
+//   Drinks → ledger lists (name ........ price)
+// Link straight to drinks with menu.html#drinks
 // =========================================================
 
-const page = document.querySelector("[data-menu-page]");
-// Links like menu.html#library or menu.html#blu-bar open the right menu
-const hash = window.location.hash.replace("#", "");
+const drawers = document.querySelectorAll(".drawer");
+const tagsBox = document.getElementById("menu-tags");
+const listBox = document.getElementById("menu-list");
 
-let restaurant = hash.startsWith("library") ? "library" : "blu";
-let type = hash.endsWith("-bar") ? "bar" : "food";
+let section = window.location.hash === "#drinks" ? "drinks" : "food";
 
-const els = {
-  eyebrow: document.getElementById("menu-eyebrow"),
-  title: document.getElementById("menu-title"),
-  chips: document.getElementById("menu-chips"),
-  columns: document.getElementById("menu-columns"),
-  restaurantBtns: document.querySelectorAll("[data-restaurant]"),
-  typeBtns: document.querySelectorAll("[data-type]")
-};
+const slug = (text) => text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
-function slug(text) {
-  return text.toLowerCase().replace(/[^a-z0-9]+/g, "-");
-}
-
-function itemHTML(item) {
+function cardHTML(item) {
   return `
-    <article class="menu-item">
-      <div class="menu-item-head">
+    <article class="index-card">
+      <div class="index-card-head">
         <h3>${item.name}</h3>
-        <span>${item.price}</span>
+        <span class="price">${item.price}</span>
       </div>
-      <p>${item.desc}</p>
-      ${item.tags ? `<span class="tags">${item.tags}</span>` : ""}
+      ${item.desc ? `<p>${item.desc}</p>` : ""}
     </article>`;
 }
 
-function categoryHTML(cat) {
+function rowHTML(item) {
   return `
-    <section class="menu-cat">
-      <h2 id="${slug(cat.category)}">${cat.category}</h2>
-      ${cat.note ? `<p class="cat-note">${cat.note}</p>` : ""}
-      ${cat.items.map(itemHTML).join("")}
+      <li class="ledger-row">
+        <span class="name">${item.name}${item.size ? ` <small>${item.size}</small>` : ""}</span>
+        ${item.price ? `<span class="dots" aria-hidden="true"></span><span class="price">${item.price}</span>` : ""}
+      </li>`;
+}
+
+function categoryHTML(c) {
+  const body = c.groups
+    ? `<div class="ledgers">${c.groups.map((g) => `
+        <div class="ledger${g.items.every((i) => !i.price) ? " ledger--list" : ""}">
+          <h3>${g.name}</h3>
+          <ul>${g.items.map(rowHTML).join("")}</ul>
+        </div>`).join("")}</div>`
+    : `<div class="cards">${c.items.map(cardHTML).join("")}</div>`;
+
+  return `
+    <section class="menu-cat" id="${slug(c.category)}">
+      <div class="menu-cat-head">
+        <h2>${c.category}</h2>
+        ${c.note ? `<p>${c.note}</p>` : ""}
+      </div>
+      ${body}
     </section>`;
 }
 
 function render() {
-  const data = MENUS[restaurant];
-  const categories = data[type];
+  const categories = MENU[section];
+  drawers.forEach((d) => d.setAttribute("aria-selected", String(d.dataset.section === section)));
 
-  // Colors follow the restaurant (Blu blue / Library red)
-  page.classList.toggle("theme-blu", restaurant === "blu");
-  page.classList.toggle("theme-lib", restaurant === "library");
-
-  els.eyebrow.textContent = data.label;
-  els.title.textContent = type === "food" ? "Food menu" : "Bar menu";
-
-  els.restaurantBtns.forEach((btn) => {
-    const active = btn.dataset.restaurant === restaurant;
-    btn.className = active ? (restaurant === "blu" ? "is-blu" : "is-lib") : "";
-    btn.setAttribute("aria-pressed", String(active));
-  });
-
-  els.typeBtns.forEach((btn) => {
-    btn.setAttribute("aria-selected", String(btn.dataset.type === type));
-  });
-
-  // Category chips jump to each section
-  els.chips.innerHTML = categories
-    .map((c) => `<a class="chip" href="#${slug(c.category)}">${c.category}</a>`)
+  tagsBox.innerHTML = categories
+    .map((c) => `<a class="tag-link" href="#${slug(c.category)}">${c.category}</a>`)
     .join("");
 
-  if (categories.length === 0) {
-    els.columns.innerHTML = `
-      <p class="menu-empty">This menu is coming soon. Call the restaurant for today’s offerings.</p>`;
-    return;
-  }
-
-  // Split categories into two columns
-  const half = Math.ceil(categories.length / 2);
-  const left = categories.slice(0, half);
-  const right = categories.slice(half);
-
-  els.columns.innerHTML = `
-    <div class="menu-col">${left.map(categoryHTML).join("")}</div>
-    <div class="col-divider" aria-hidden="true"></div>
-    <div class="menu-col">${right.map(categoryHTML).join("")}</div>`;
+  listBox.innerHTML = categories.length
+    ? categories.map(categoryHTML).join("")
+    : `<p class="notice">This drawer is still being filled. Call us for today’s offerings.</p>`;
 }
 
-els.restaurantBtns.forEach((btn) =>
-  btn.addEventListener("click", () => {
-    restaurant = btn.dataset.restaurant;
+drawers.forEach((d) =>
+  d.addEventListener("click", () => {
+    section = d.dataset.section;
     render();
   })
 );
 
-els.typeBtns.forEach((btn) =>
-  btn.addEventListener("click", () => {
-    type = btn.dataset.type;
+// Re-check the link if only the #part changes (e.g. clicking "drinks" while already here)
+window.addEventListener("hashchange", () => {
+  if (window.location.hash === "#drinks" || window.location.hash === "#food") {
+    section = window.location.hash.slice(1);
     render();
-  })
-);
+  }
+});
 
 render();
